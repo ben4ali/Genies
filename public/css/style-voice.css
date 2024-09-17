@@ -1,0 +1,100 @@
+.voiceControlContainer{
+    display: flex;
+    gap: 5rem;
+    width: 100%;
+    justify-content: center;
+    margin-top: 3rem;
+}
+.voiceform{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+}
+.voiceInput{
+    text-align: left;
+}
+.voiceform textarea{
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    font-weight: 500;
+    color: white;
+    background-color: transparent;
+    border: 1px solid rgb(255,255,255,0.2);
+    resize: none;
+    height: 18rem;
+    width: 45rem;
+    border-radius: 5px;
+}
+.voiceform textarea:focus{
+    scale: 1.005;
+    transition: 0.25s;
+    outline: none;
+}
+.voiceform button{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    background-color: #f0f0f016;
+    border: 1px solid rgb(255,255,255,0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.voiceform button:hover{
+    background-color: #f0f0f03a;
+    transition: 0.25s;
+}
+
+.audioPlayer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    opacity: 0.5;
+}
+.voiceContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.voicesHolder{
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width:20rem;
+    padding-inline:1rem;
+    gap: 1rem;
+}
+.voice{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 7px;
+    background-color: #f0f0f016;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    height: 8rem;
+    width: 8rem;
+    opacity: 0;
+}
+.voice:hover{
+    scale: 1.025;
+    background-color: #f0f0f03a;
+    transition: 0.25s;
+}
+.selectedVoice{
+    background-color: #f0f0f03a;
+}
+.voice p{
+    font-size: 1.2rem;
+    font-weight: 400;
+}

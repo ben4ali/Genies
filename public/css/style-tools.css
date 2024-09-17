@@ -1,0 +1,341 @@
+#content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.toolContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+.toolContainer h2{
+    font-size: 2rem;
+    font-weight: 400;
+    text-align: center;
+}
+.toolForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.toolForm input, .toolForm2 textarea{
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    background-color: transparent;
+    color: white;
+    padding-inline:1rem ;
+    outline: none;
+}
+.toolForm2 textarea{
+    height: 30rem;
+    width: 40rem;
+    resize: none;
+    border-radius: 5px;
+}
+.inputHolder textarea:focus{
+    scale: 1.015;
+    transition: 0.3s;
+}
+.toolForm input:focus{
+    scale: 1.05;
+    transition: 0.3s;
+}
+.toolForm2{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.toolForm2 i{
+    font-size: 4rem;
+    color: white;
+    cursor: pointer;
+}
+.inputHolder, .outputHolder{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.inputHolder button{
+    position: absolute;
+    bottom: -4rem;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.inputHolder button:hover{
+    background-color: #d6d6d634;
+    transition: 0.3s;
+}
+.toolForm2 div{
+    width: 100%;
+}
+.toolForm2 div h3{
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+}
+
+.outputHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.outputHeader h3{
+    width: 80%;
+
+}
+.outputHolder textarea{
+    background-color: rgb(255,255,255,0.035);
+}
+.languageMenu{
+    position: relative;
+    display: flex;
+    gap: 0.25rem;
+    justify-content: center;
+    align-items: center;
+    justify-self: flex-end;
+    width: 0em !important;
+}
+.languageMenu p{
+    font-size: 1.25rem;
+    color: white;
+    cursor: pointer;
+    margin: 0;
+
+}
+.languageMenu p:first-child{
+    opacity: 0.5;
+    margin-right: 0.5rem;
+}
+.languageMenu i{
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+.languageMenu i:last-child{
+    font-size: 0.5rem;
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 0.25rem;
+}
+.languageMenu i:last-child:hover{
+    scale: 1.25;
+}
+.dropMenu{
+    background-color: rgb(255,255,255,0.25);
+    backdrop-filter: blur(9px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 8rem !important;
+    position: absolute;
+    top: 120%;
+    border-radius: 5px;
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 0;
+    z-index: 100;
+}
+.dropMenu p{
+    width: 100%;
+    text-align: left;
+    padding-left: 1rem;
+    margin: 0;
+    padding-block: 0.5rem;
+}
+.dropMenu p:hover{
+    background-color: rgb(255,255,255,0.2);
+    transition: 0.3s;
+    cursor: pointer;
+}
+.selectedLanguage{
+    background-color: rgb(255,255,255,0.2);
+}
+
+#detectedLanguage{
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-align: center;
+    border-radius: 3px;
+    background-color: #d6d6d61f;
+    color: white;
+    z-index: 100;
+
+}
+/*-------Image generator--------*/
+
+.imageResult{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    z-index: -1;
+}
+.imageResult img{
+    max-height: 20rem;
+    border-radius: 7px;
+}
+.imageResult img:hover{
+    transform: scale(1.035);
+    box-shadow: 0 0 15px 7px rgb(255,255,255,0.1);
+    transition: 0.3s;
+}
+.imageOptions{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.imageOptions a{
+    padding: 1rem;
+    padding-inline: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.imageOptions a:hover{
+    background-color: #d6d6d634;
+    transition: 0.3s;
+}
+.aspectRatioContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    transform: translateY(-15%);
+}
+.aspectRatioContainer p{
+    width: 47%;
+    font-size: 15px;
+    margin: 0;
+}
+.aspectRatio{
+    padding: 1rem;
+    font-size: 0.85rem;
+    font-weight: 400;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.arHolder{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.aspectRatio:hover{
+    background-color: #d6d6d634;
+    transition: 0.3s;
+}
+.selectedAspectRatio{
+    background-color: #d6d6d634;
+}
+
+
+/*-------Loader generator--------*/
+.loaderHolder{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+}
+.ld-ripple {
+    position: absolute;
+    transform: translateY(-35%);
+    width: 80px;
+    height: 80px;
+}
+
+.ld-ripple div {
+    position: absolute;
+    border: 4px solid #ffffff8d;
+    opacity: 1;
+    border-radius: 50%;
+    animation: ld-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+
+.ld-ripple div:nth-child(2) {
+    animation-delay: -0.5s;
+}
+
+@keyframes ld-ripple {
+    0% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    4.9% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 0;
+    }
+
+    5% {
+        top: 36px;
+        left: 36px;
+        width: 0;
+        height: 0;
+        opacity: 1;
+    }
+
+    100% {
+        top: 0px;
+        left: 0px;
+        width: 72px;
+        height: 72px;
+        opacity: 0;
+    }
+}

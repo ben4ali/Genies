@@ -1,0 +1,18 @@
+<header>
+    <div class="header">
+        <a href="/" id="logo">GENIES</a>
+        <div class="headerOptionHolder">
+        <% if (currentUser != null) { %>
+            <a href="/dashboard" id="user" title="Dashboard"><i class="bi bi-person"></i></a>
+            <a href="/logout" title="Logout"><i class="bi bi-box-arrow-right"></i></a>
+        <% } else { %>
+            <a href="/auth" id="login">Login</a>
+        <% } %>
+        </div>
+    </div>
+</header>
+<!-- <% if (error && error.length > 0) { %>
+    <div class="alert alert-danger" role="alert">
+        <p><%= error %></p>
+    </div>
+<% } %> -->

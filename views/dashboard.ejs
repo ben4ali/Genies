@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genies</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-dashboard.css">
+    <link rel="icon" href="genies.png" type="genies">
+    <script src="js/script-dashboard.js" defer></script>
+</head>
+<body>
+    <!--HEADER-->
+    <%- include('partials/_header') %>
+    <!--CONTENT-->
+    <section id="content">
+        <!--USER SECTION-->
+        <div class="userSection section">
+            <div class="user">
+                <div class="imgUser">
+                    <img src="/media/profilPictures/<%= currentUser.pfpURL %>" alt="Profile">
+                    <div class="editImg">
+                        <i class="bi bi-pen"></i>
+                    </div>
+                </div>
+
+                <div class="userInfo">
+                    <% if (currentUser) { %>
+                        <h2><%= currentUser.username %></h2>
+                        <p><%= currentUser.email %></p>
+                    <% } %>
+                </div>
+                <div class="stats">
+                    <div class="stat">
+                        <h3><%= currentUser.promptsNbr %></h3>
+                        <p>Prompts</p>
+                    </div>
+                    <div class="stat">
+                        <h3><%= currentUser.imgGenNbr %></h3>
+                        <p>Images Generated</p>
+                    </div>
+                    <div class="stat">
+                        <h3><%= currentUser.musicGenNbr %></h3>
+                        <p>Music Generated</p>
+                    </div>
+                    <div class="stat">
+                        <h3><%= currentUser.voiceGenNbr %></h3>
+                        <p>Text Translated</p>
+                    </div>
+                </div>
+                <div class="customization">
+                    <div class="color selectedColor" data-colorValue="linear-gradient(40deg, rgb(9, 4, 34), rgb(22, 48, 103))"></div>
+                    <div class="color" data-colorValue="linear-gradient(40deg, rgb(34, 4, 6), rgb(103, 22, 63))"></div>
+                    <div class="color" data-colorValue="linear-gradient(40deg, rgb(14, 6, 46), rgb(96, 22, 103))"></div>
+                    <div class="color" data-colorValue="linear-gradient(40deg, rgb(8, 45, 67), rgb(60, 22, 103))"></div>
+                    <div class="color" data-colorValue="linear-gradient(40deg, rgb(70, 12, 65), rgb(168, 65, 31))"></div>
+                    <div class="color" data-colorValue="linear-gradient(40deg, rgb(11, 21, 98), rgb(26, 101, 128))"></div>
+                </div>
+                <a id="logout" href="/logout">Logout</a>
+            </div>
+                    
+        </div>
+        <!--TOOLS SECTION-->
+        <div class="toolSection section">
+            <h3>AI TOOLS</h3>
+            <div class="toolHolder">
+                <a href="/tools/image" class="ai">
+                    <img src="media/icons/imggen.png" alt="">
+                    <h4>Image Generation</h4>
+                    <span class="provider">
+                        <img src="media/icons/stabilityai.jpeg" alt="">
+                    </span>
+                </a>
+                <a href="/tools/music" class="ai">
+                    <img src="media/icons/musgen.png" alt="">
+                    <h4>Music Generation</h4>
+                    <span class="coming"><i class="bi bi-tools"></i></span>
+                    <span class="provider">
+                        <img src="media/icons/stabilityai.jpeg" alt="">
+                    </span>
+                </a>
+                <a href="/tools/voice" class="ai">
+                    <img src="media/icons/voice.png" alt="">
+                    <h4>Text to speech</h4>
+                    <span class="provider">
+                        <img src="media/icons/openAi.png" alt="">
+                    </span>
+                </a>
+                <a href="/tools/language" class="ai">
+                    <img src="media/icons/textgen.png" alt="">
+                    <h4>Language model</h4>
+                    <span class="provider">
+                        <img src="media/icons/openAi.png" alt="">
+                    </span>
+                </a>
+                <a href="/tools/translate" class="ai">
+                    <img src="media/icons/translation.png" alt="">
+                    <h4>Translator</h4>
+                    <span class="provider">
+                        <img src="media/icons/deepLlogo.png" alt="">
+                    </span>
+                </a>
+                <a href="#" class="ai">
+                    <img src="media/icons/more.png" alt="">
+                    <h4>More to come</h4>
+                </a>
+            </div>
+        </div>
+        <!--ACTIVITY SECTION-->
+        <div class="activitySection section">
+            <div class="saveContainer">
+                <h3>Saved</h3>
+                <div class="saveHolder">
+                </div>
+            </div>
+            <div class="activityContainer">
+                <h3>Activity</h3>
+                <div class="activityHolder">
+                </div>
+            </div>
+        </div>
+    </section>
+    <dialog>
+        <div class="dialogHeader">
+            <i id="closeBtn" class="bi bi-x-lg"></i>
+        </div>
+        <div class="imagePreview">
+            <img id="imgOrigin" src="/media/profilPictures/<%= currentUser.pfpURL %>" alt="">
+            <div id="connection"></div>
+            <img id="imgNew" src="" alt="">
+        </div>
+
+        <form id="pfpForm" action="/profil/changePfp" method="POST" enctype="multipart/form-data">
+            <label class="custum-file-upload" for="file">
+                <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="" viewBox="0 0 24 24"><g stroke-width="0" id="SVGRepo_bgCarrier"></g><g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g><g id="SVGRepo_iconCarrier"> <path fill="" d="M10 1C9.73478 1 9.48043 1.10536 9.29289 1.29289L3.29289 7.29289C3.10536 7.48043 3 7.73478 3 8V20C3 21.6569 4.34315 23 6 23H7C7.55228 23 8 22.5523 8 22C8 21.4477 7.55228 21 7 21H6C5.44772 21 5 20.5523 5 20V9H10C10.5523 9 11 8.55228 11 8V3H18C18.5523 3 19 3.44772 19 4V9C19 9.55228 19.4477 10 20 10C20.5523 10 21 9.55228 21 9V4C21 2.34315 19.6569 1 18 1H10ZM9 7H6.41421L9 4.41421V7ZM14 15.5C14 14.1193 15.1193 13 16.5 13C17.8807 13 19 14.1193 19 15.5V16V17H20C21.1046 17 22 17.8954 22 19C22 20.1046 21.1046 21 20 21H13C11.8954 21 11 20.1046 11 19C11 17.8954 11.8954 17 13 17H14V16V15.5ZM16.5 11C14.142 11 12.2076 12.8136 12.0156 15.122C10.2825 15.5606 9 17.1305 9 19C9 21.2091 10.7909 23 13 23H20C22.2091 23 24 21.2091 24 19C24 17.1305 22.7175 15.5606 20.9844 15.122C20.7924 12.8136 18.858 11 16.5 11Z" clip-rule="evenodd" fill-rule="evenodd"></path> </g></svg>
+                </div>
+                <div class="text">
+                    <span>Click to upload image</span>
+                    </div>
+                    <input name="image" type="file" id="file">
+            </label>
+                <button>Confirm</button>
+        </form>
+    </dialog>
+    <p id="userContent" style="display: none;"><%= currentUser._id %></p>
+</body>
+</html>

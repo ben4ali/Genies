@@ -1,0 +1,687 @@
+html, body {
+    font-family: system-ui;
+    margin: 0;
+    padding: 0;
+    color: white;
+    overflow-x: hidden;
+    background: linear-gradient(40deg, rgb(9, 4, 34), rgb(22, 48, 103));
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(246, 246, 251, 0);
+}
+::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 25px;
+    background: rgba(191, 191, 191, 0.25);
+}
+
+/*-------------------HEADER-------------------*/
+#landing{
+    z-index: 1;
+    position: fixed;
+    top: 0%;
+}
+.header{
+    display: flex;
+    position: absolute;
+    top: 1%;
+    left: 20%;
+    justify-content: start;
+    z-index: 1000;
+    width: 100%;
+    margin: 0 auto;
+}
+.headerOptionHolder{
+    display: flex;
+    gap: 1rem;
+    margin-left: 50%;
+}
+.header a{
+    opacity: 0.4;
+    margin: 0;
+    font-size: 25px;
+    animation: fadeLoop 2s infinite;
+}
+.header a i{
+    font-size: 1.5rem;
+    color: white;
+    margin: 0;
+    opacity: 0.75;
+}
+#user:hover{
+    scale: 1.1;
+    transition: 0.5s;
+}
+
+/*-------------------LANDING-------------------*/
+.text-container {
+    z-index: 100;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 25%;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+
+.text-container h1 {
+    letter-spacing: 7px;
+    font-weight: 300;
+    font-size: 125px;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+.text-container p{
+    font-size: 25px;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+.text-container a{
+    font-size: 20px;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+    margin-top: 12rem;
+}
+.text-container a:hover{
+    color: #f1f1f1;
+    opacity: 1;
+    letter-spacing: 2px;
+    transition: 0.5s;
+}
+
+#nextArrow{
+    position: absolute;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    opacity: 0.8;
+    user-select: none;
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+    top: 75%;
+    animation: fadeLoop 2s infinite;
+}
+
+@keyframes fadeLoop {
+    0%, 100% {
+        opacity: 0.8;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+
+:root {
+    --color-bg1: rgb(9, 4, 34);
+    --color-bg2: rgb(22, 48, 103);
+    --color1: 156, 125, 152;
+    --color2: 180, 52, 235;
+    --color3: 52, 61, 235;
+    --color4: 98, 52, 235;
+    --color5: 235, 131, 52;
+    --color-interactive: 140, 100, 255;
+    --circle-size: 60%;
+    --blending: hard-light;
+}
+
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(180deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes moveVertical {
+    0% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(50%);
+    }
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes moveHorizontal {
+    0% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+    50% {
+        transform: translateX(50%) translateY(10%);
+    }
+    100% {
+        transform: translateX(-50%) translateY(-10%);
+    }
+}
+.gradient-bg {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    svg {
+        display: none;
+    }
+
+    .gradients-container {
+        filter: url(#goo) blur(40px) ;
+        width: 100%;
+        height: 100%;
+    }
+
+    .g1 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+
+        transform-origin: center center;
+        animation: moveVertical 30s ease infinite;
+
+        opacity: 0.85;
+    }
+    .g2 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+
+        transform-origin: calc(50% - 400px);
+        animation: moveInCircle 20s reverse infinite;
+
+        opacity: 0.85;
+    }
+    .g3 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2 + 200px);
+        left: calc(50% - var(--circle-size) / 2 - 500px);
+
+        transform-origin: calc(50% + 400px);
+        animation: moveInCircle 40s linear infinite;
+
+        opacity: 0.25;
+    }
+
+    .g4 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: var(--circle-size);
+        height: var(--circle-size);
+        top: calc(50% - var(--circle-size) / 2);
+        left: calc(50% - var(--circle-size) / 2);
+
+        transform-origin: calc(50% - 200px);
+        animation: moveHorizontal 40s ease infinite;
+
+        opacity: 0.65;
+    }
+
+    .g5 {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+
+        width: calc(var(--circle-size) * 2);
+        height: calc(var(--circle-size) * 2);
+        top: calc(50% - var(--circle-size));
+        left: calc(50% - var(--circle-size));
+
+        transform-origin: calc(50% - 800px) calc(50% + 200px);
+        animation: moveInCircle 20s ease infinite;
+
+        opacity: 0.65;
+    }
+
+    .interactive {
+        position: absolute;
+        background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+        mix-blend-mode: var(--blending);
+        filter: blur(15px);
+        width: 100%;
+        height: 100%;
+        top: -50%;
+        left: -50%;
+
+        opacity: 0.65;
+    }
+}
+
+/*-------------------ABOUT-------------------*/
+#about{
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.385);
+    backdrop-filter: blur(50px);
+    height: 100vh;
+    width: 100vw;
+    margin-top: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 8rem;
+}
+.aboutContent{
+    display: flex;
+    flex-direction: column;
+    max-width: 50%;
+    color: white;
+}
+.aboutContent h2{
+    font-size: 40px;
+}
+.aboutContent p{
+    margin: 0;
+}
+.aboutContent p{
+    font-size: 20px;
+    font-weight: 20;
+    margin-bottom: 1rem;
+}
+.aboutContent p:nth-child(2){
+    font-size: 25px;
+    margin-top: 2rem;
+    font-weight: 550;
+}
+#try{
+    margin-top: 2rem;
+    width: 20rem;
+
+    font-weight: 500;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+    background-color: rgb(255,255,255,0.25);
+    padding: 1.5rem 1.5rem;
+    border-radius: 50rem;
+    border: 1px solid white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#try p{
+    margin: 0;
+    font-size: 1.75rem;
+}
+#try i{
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+    opacity: 0.75;
+}
+#try:hover{
+    background-color: rgb(255,255,255,0.35);
+    color: white;
+    opacity: 1;
+    transition: 0.25s;
+}
+
+/*-------------------DEMO-------------------*/
+#demo{
+    position: relative;
+    z-index: 2;
+    background-color: rgb(0,0,0,0.385);
+    backdrop-filter: blur(50px);
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-block: 8rem;
+    padding-bottom: 25rem;
+    gap: 20rem;
+}
+#imgGen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 2rem;
+    gap: 5rem;
+}
+.imgInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    width: 25rem;
+
+}
+.imgInfo p{
+    font-size: 20px;
+    color: white;
+    margin: 0;
+
+}
+#imgGen h3{
+    font-size: 35px;
+    color: white;
+    margin: 0;
+    align-self: start;
+}
+.imgHolder{
+    width: 35rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 2rem;
+}
+.imgHolder img{
+    width: 10rem;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    scale: 0.5;
+    opacity: 0;
+    transform: translateX(-150%);
+}
+
+.imgHolder img:hover{
+    scale: 1.1;
+    cursor: pointer;
+    transition: 0.1s;
+}
+
+#chatBot{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 100vw;
+}
+.chatInfo{
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+.chatInfo h3{
+    font-size: 35px;
+    color: white;
+    margin: 0;
+    align-self: start;
+}
+.chatInfo p{
+    font-size: 20px;
+    color: white;
+    margin: 0;
+}
+.demoCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    width: 35%;
+    margin-top: 2rem;
+
+}
+#ideaInput {
+    display: flex;
+    align-items: center;
+    width: 90%;
+    height: 3rem;
+    border-radius: 1rem;
+    border: 1px solid rgb(255,255,255,0.05);
+    background-color: rgb(255,255,255,0.05);
+    color: white;
+    padding: 1rem;
+    font-size: 20px;
+    outline: none;
+}
+.cardHolder{
+    border-top: 1px solid rgb(255,255,255,0.25);
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.card{
+    background-color: rgb(255,255,255,0.1);
+    border: 1px solid rgb(255,255,255,0.25);
+    height: 5rem;
+    width: 15rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+.card p{
+    margin: 0;
+}
+#musicGen{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 5rem;
+    width: 100vw;
+
+}
+.musicInfo{
+    display: flex;
+    flex-direction: column;
+    width: 35rem;
+    padding: 5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    animation: beat 0.85s infinite;
+    border-radius: 50%;
+    height: 35rem;
+}
+.musicInfo p {
+    font-size: 20px;
+    color: white;
+    margin: 0;
+
+}
+#musicGen h3{
+    width: 100%;
+    font-size: 35px;
+    color: white;
+    margin: 0;
+    align-self: start;
+}
+.musicSheet{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+
+}
+.musicSheet div{
+    display: flex;
+    justify-content: end;
+    border: 1px solid rgba(255, 255, 255, 0.224);
+    width: 100%;
+}
+.musicSheet div i{
+    position: absolute;
+    font-size: 2rem;
+    color: white;
+    margin: 0;
+    transform: translateY(-50%);
+    opacity: 0.75;
+}
+
+.musicSheet div:first-child{
+    position: absolute;
+    border: none;
+    height: 120%;
+    align-self: flex-start;
+    width: 2rem;
+    transform: translateX(100%);
+    border-left: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+@keyframes beat {
+    0% , 100% {
+        box-shadow: 0 0 0 0 rgba(160, 119, 230, 0.5);
+    }
+    50% {
+
+        border: 1px solid rgba(160, 119, 230, 0.15);
+        box-shadow: 0 0 2rem 1rem rgba(255, 255, 255, 0);
+    }
+    85% {
+        box-shadow: 0 0 0.75rem 0.25rem rgba(157, 167, 251, 0.15);
+    }
+}
+
+#more{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+    width: 100vw;
+}
+#more h3{
+    font-size: 35px;
+    color: white;
+    margin: 0;
+}
+.toolHolder{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 60%;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.tool{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255,255,255,0.025);
+    border: 1px solid rgb(255,255,255,0.15);
+    border-radius: 7px;
+    height: 15rem;
+    width: 15rem;
+    color: white;
+    font-size: 20px;
+}
+.tool:hover{
+    background-color: rgb(255,255,255,0.05);
+    transition: 0.25s;
+    transform: translateY(-1rem);
+    cursor: pointer;
+}
+.tool img{
+    height: 5rem;
+    width: 5rem;
+    object-fit: cover;
+    filter: invert(1);
+}
+footer{
+    position: relative;
+    bottom: 0;
+    z-index: 100;
+    display: flex;
+    width: 100%;
+    height: 60vh;
+}
+footer img{
+    height: 12rem;
+    width: 12rem;
+    opacity: 0.7;
+    object-fit: cover;
+}
+.footerhead{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+}
+.footerhead h2{
+    font-size: 40px;
+    color: white;
+    margin: 0;
+    font-weight: 200;
+}
+.footerLinks{
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 19%;
+}
+.footerLinks a{
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    opacity: 0.8;
+    user-select: none;
+    text-shadow: 1px 1px rgba(0,0,0,0.1);
+}
+.footerContent{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(0,0,0,0.65);
+}

@@ -1,0 +1,491 @@
+#content{
+    margin-block: 5rem;
+    display: grid;
+    margin-inline: 10%;
+    gap: 1rem;
+}
+.section{
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgb(255,255,255,0.1);
+    background-color: rgb(255,255,255,0.025);
+    border-radius: 7px;
+}
+.section:hover{
+    box-shadow: 0 0 15px 5px rgb(255,255,255,0.0125);
+    transition: 0.35s;
+}
+/* -----------------User Section----------------- */
+.userSection{
+    width: 24rem;
+    height: 66.5rem;
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-block: 3rem;
+}
+.user{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+.user img{
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+    border: 10px solid rgb(255,255,255,0.05);
+    box-shadow: 5px 5px 15px 5px rgb(0,0,0,0.2);
+}
+.editImg:hover{
+    opacity: 1;
+    transition: 0.35s;
+}
+.editImg:hover .user img{
+    box-shadow: 12px 12px 19px 7px rgb(0,0,0,0.15);
+    scale: 1.05;
+    transition: 0.35s;
+}
+.imgUser{
+    position: relative;
+}
+.editImg{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: rgb(0,0,0,0.5);
+}
+.editImg i{
+    font-size: 6rem;
+    color: rgb(255,255,255,0.5);
+    cursor: pointer;
+}
+.userInfo{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+.stats{
+    border-block: 1px solid rgb(255,255,255,0.25);
+    padding-block: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    width: 100%;
+}
+.customization{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+.color{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.color:hover{
+    box-shadow: 0 0 5px 5px rgb(255,255,255,0.1);
+    transition: 0.15s;
+    scale: 1.5;
+}
+.selectedColor{
+    box-shadow: 0 0 5px 5px rgb(255,255,255,0.1);
+    border: 1px solid white;
+    scale: 1.25;
+}
+.color:nth-child(1){
+    background-color: #3f51b5;
+}
+.color:nth-child(2){
+    background-color: #e91e63;
+}
+.color:nth-child(3){
+    background-color: #9c27b0;
+}
+.color:nth-child(4){
+    background-color: #673ab7;
+}
+.color:nth-child(5){
+    background-color: #f44336;
+}
+.color:nth-child(6){
+    background-color: #2196f3;
+}
+
+#logout{
+    background-color: rgb(255,255,255,0.05);
+    border: 1px solid rgb(255,255,255,0.1);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: rgb(255,255,255,0.5);
+    cursor: pointer;
+    margin-top: 5rem;
+}
+#logout:hover{
+    background-color: rgb(255,255,255,0.1);
+    transition: 0.35s;
+    color: white;
+}
+
+/* -----------------Tool Section----------------- */
+.toolSection{
+    height: 20rem;
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+    padding: 2rem;
+    height: fit-content;
+    min-width: 60vw;
+}
+.toolSection h3{
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+    width: 100%;
+    margin: 0;
+}
+.toolHolder{
+    display: flex;
+    gap: 2rem;
+    padding-block: 1rem;
+    align-items: center;
+    width: 40rem;
+    height: fit-content;
+    border-radius: 7px;
+    flex-wrap: wrap;
+}
+.ai{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 10rem;
+    height: 10rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    border-radius: 9px;
+    box-shadow: 5px 5px 15px 5px rgb(0,0,0,0.2);
+}
+.ai:hover{
+    scale: 1.05;
+    box-shadow: 7px 7px 17px 7px rgb(0,0,0,0.25);
+    transition: 0.35s;
+}
+.ai:first-child{
+    background: linear-gradient(45deg, #3f51b5, #2133f3);
+}
+.ai:nth-child(2){
+    background: linear-gradient(45deg, #e91e63, #f50057);
+}
+.ai:nth-child(3){
+    background: linear-gradient(45deg, #9c27b0, #6a0080);
+}
+.ai:nth-child(4){
+    background: linear-gradient(45deg, #673ab7, #320b86);
+}
+.ai:nth-child(5){
+    background: linear-gradient(45deg, #f44336, #d50000);
+}
+.ai:nth-child(6){
+    background: linear-gradient(45deg, #3c3c3d, #7d7e80);
+    opacity: 0.4;
+}
+.ai img{
+    width: 5rem;
+    height: 5rem;
+    filter: invert(1);
+
+}
+.ai h4{
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+.coming{
+    background-color: rgba(88, 51, 51, 0.8);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -8%;
+    right: -8%;
+}
+.coming i{
+    font-size: 1.25rem;
+    margin: 0;
+}
+.provider{
+    color: white;
+    padding: 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 1%;
+    left: 1%;
+}
+.provider img{
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 50%;
+    object-fit: contain;
+    opacity: 0.75;
+    filter: invert(0) !important;
+}
+/* -----------------Activity Section----------------- */
+.activitySection{
+    height: 32rem;
+    grid-column: 2 / span 2;
+    grid-row: 2/ span 2;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 100%;
+}
+.activitySection h3{
+    color: white;
+    font-size: 2rem;
+    font-weight: 300;
+}
+.saveContainer, .activityContainer{
+    text-align: center;
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 50%;
+    height: 90%;
+    flex-direction: column;
+}
+.activityContainer{
+    width: 30%;
+    margin-left: 2rem;
+
+}
+.saveHolder, .activityHolder{
+    display: flex;
+    gap: 1rem;
+    padding-block: 1rem;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 20rem;
+    border-radius: 7px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.save{
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    width: 95%;
+    align-items: center;
+    text-align: left;
+    padding: 1rem;
+    border: 1px solid rgb(255,255,255,0.1);
+    background-color: rgb(255,255,255,0.025);
+}
+.save h4{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    width: 100%;
+}
+.saveHeader{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.saveHeader p{
+    color: white;
+    font-size: 1rem;
+    font-weight: 300;
+    width: 100%;
+    margin: 0;
+}
+.save p{
+    width: 100%;
+    text-align: left;
+}
+.favorite{
+    color: rgb(255,255,255,0.5);
+    cursor: pointer;
+}
+.favorite:hover{
+    color: white;
+    transition: 0.35s;
+}
+.activity{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    text-align: left;
+    padding: 1rem;
+    border-bottom: 1px solid rgb(255,255,255,0.1);
+}
+.dialogHeader{
+    width: 100%;
+    padding-inline:0.25rem;
+    height: 1rem;
+    display: flex;
+    justify-content: end;
+}
+.dialogHeader i{
+    position: relative;
+    z-index: 10000;
+    cursor: pointer;
+    color: rgb(255,255,255,0.75);
+    font-size: 25px;
+}
+.dialogHeader i:hover{
+    color: white;
+    transition: 0.35s;
+}
+dialog[open]{
+    background-color: rgb(255,255,255,0.2);
+    border: none;
+    outline: none;
+    backdrop-filter: blur(36px);
+    border-radius: 7px;
+    padding: 1rem;
+    color: white;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    width: 35rem;
+}
+dialog img{
+    width: 11rem;
+    height: 11rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 10px solid rgb(255,255,255,0.05);
+    outline: none;
+    box-shadow: 5px 5px 15px 5px rgb(0,0,0,0.2);
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+dialog img:nth-child(2){
+    opacity: 0;
+}
+.imagePreview{
+    height: 50%;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.imagePreview div{
+    width: 3rem;
+    height: 0.25rem;
+    border-radius: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255,255,255,0.75);
+    opacity: 0;
+
+}
+
+#pfpForm{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#pfpForm button{
+    position: relative;
+    z-index: 1000;
+    width: 35%;
+    height: 2.5rem;
+    color: white;
+    border: 1px solid white;
+    background: transparent;
+    border-radius: 8px;
+    outline: none;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+#pfpForm button:hover{
+    background-color: rgb(255,255,255,0.1);
+}
+.custum-file-upload {
+    height: 150px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    border: 2px dashed #cacaca;
+    background-color: rgba(255, 255, 255, 0.25);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 48px 35px -48px rgba(0,0,0,0.1);
+}
+.custum-file-upload .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.custum-file-upload .icon svg {
+    height: 45px;
+    fill: rgb(29, 32, 35);
+}
+.custum-file-upload .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+.custum-file-upload .text span {
+    font-weight: 400;
+    color: rgb(29, 32, 35);
+}
+.custum-file-upload input {
+    display: none;
+}

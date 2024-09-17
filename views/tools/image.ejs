@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/TextPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genies</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-tools.css">
+    <link rel="icon" href="genies.png" type="genies">
+    <script src="../js/script-tools.js"></script>
+</head>
+<body>
+    <!--HEADER-->
+    <%- include('../partials/_header') %>
+    <!--CONTENT-->
+    <section id="content">
+        <div class="toolContainer">
+            <h2 id="toolTitle">IMAGE GENERATION</h2>
+            <div class="loaderHolder">
+                <div class="ld-ripple">
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+            <form class="toolForm" action="">
+                <input id="toolInput" name="prompt" type="text" placeholder="Describe the image you want to generate">
+            </form>
+            <div class="aspectRatioContainer">
+                <div class="arHolder">
+                    <div class="aspectRatio selectedAspectRatio" data-aspectRatio="1:1">1:1</div>
+                    <div class="aspectRatio" data-aspectRatio="16:9">16:9</div>
+                    <div class="aspectRatio" data-aspectRatio="4:3">4:3</div>
+                    <div class="aspectRatio" data-aspectRatio="3:2">3:2</div>
+                    <div class="aspectRatio" data-aspectRatio="9:16">9:16</div>
+                </div>
+            </div>
+        </div>
+        <div class="imageResult">
+            <img src="/media/image/eye.png" alt="">
+            <div class="imageOptions">
+                <a href="/tools/image">Start again</a>
+                <a id="downloadBtn" href=""><i class="bi bi-download"></i></a>
+
+            </div>
+        </div>
+    </section>
+    <p id="userContent" style="display: none;"><%= currentUser._id %></p>
+</body>
+</html>
