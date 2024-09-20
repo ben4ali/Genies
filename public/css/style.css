@@ -5,6 +5,7 @@ html, body {
     color: white;
     overflow-x: hidden;
     background: linear-gradient(40deg, rgb(9, 4, 34), rgb(22, 48, 103));
+    background-color: rgb(9, 4, 34);
 }
 a{
     text-decoration: none;
@@ -30,13 +31,16 @@ a{
     position: fixed;
     top: 0%;
 }
+header{
+    z-index: 10000;
+}
 .header{
     display: flex;
     position: absolute;
     top: 1%;
     left: 20%;
     justify-content: start;
-    z-index: 1000;
+    z-index: 10000;
     width: 100%;
     margin: 0 auto;
 }
@@ -193,6 +197,7 @@ a{
 
     .gradients-container {
         filter: url(#goo) blur(40px) ;
+        -webkit-filter: url(#goo) blur(40px) ;
         width: 100%;
         height: 100%;
     }
@@ -280,6 +285,7 @@ a{
         background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
         mix-blend-mode: var(--blending);
         filter: blur(15px);
+        -webkit-filter:blur(15px);
         width: 100%;
         height: 100%;
         top: -50%;
@@ -295,6 +301,7 @@ a{
     z-index: 2;
     background-color: rgba(0, 0, 0, 0.385);
     backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     height: 100vh;
     width: 100vw;
     margin-top: 100vh;
@@ -366,6 +373,7 @@ a{
     z-index: 2;
     background-color: rgb(0,0,0,0.385);
     backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -684,4 +692,122 @@ footer img{
     align-items: center;
     justify-content: center;
     background-color: rgb(0,0,0,0.65);
+}
+@media (max-width: 900px) {
+    .text-container{
+        width: 100%;
+    }
+    .text-container h1{
+        font-size: 65px;
+    }
+    header{
+        position: fixed;
+        width: 100%;
+    }
+    .header{
+        left: 0%;
+        width: 100%;
+        justify-content: space-between;
+        padding-inline: 2rem;
+    }
+    .headerOptionHolder{
+        margin-left: 0%;
+    }
+    #about{
+        width: 100%;
+    }
+    .aboutContent{
+        text-align: center;
+        max-width: 90%;
+    }
+    .aboutContent a{
+        scale: 0.7;
+    }
+    #imgGen{
+        width: 80%;
+        flex-direction: column;
+        gap: 5rem;
+    }
+    .imgInfo{
+        width: 100%;
+    }
+    .imgHolder{
+        width: 100%;
+        margin-top: initial;
+        gap: 2rem;
+    }
+    .imgHolder img{
+        height: 6rem;
+        width: 10rem;
+    }
+    .imgHolder img:nth-child(odd){
+        margin-left: 40%;
+    }
+    .imgHolder img:nth-child(even){
+        margin-right: 40%;
+    }
+    #chatBot{
+        width: 100%;
+        flex-direction: column-reverse;
+        margin-top: initial;
+        gap: 5rem;
+    }
+    .demoCard{
+        width: 80%;
+    }
+    .demoCard #ideaInput{
+        width: 100%;
+        font-size: 15px;
+    }
+    .demoCard .card{
+        width: 35%;
+        font-size: 15px;
+        text-align: center;
+    }
+    #musicGen{
+        width: 100%;
+        flex-direction: column;
+        gap: 5rem;
+    }
+    .musicInfo{
+        width: 90%;
+        height: 25rem;
+        padding: initial;
+        text-align: center;
+    }
+    .musicSheet{
+        display: none;
+    }
+    #more .toolHolder{
+        width: 90%;
+        gap: 2rem;
+    }
+    #more .tool{
+        height: 9rem;
+        width: 9rem;
+        text-align: center;
+        font-size: 15px;
+    }
+    #more .tool img{
+        height: 3rem;
+        width: 3rem;
+    }
+    .footerhead{
+        width: 100%;
+    }
+    .footerhead img{
+        height: 4rem;
+        width: 4rem;
+        margin-bottom: 0.5rem;
+    }
+    .footerLinks{
+        width: 100%;
+        gap: 1rem;
+    }
+    .footerContent{
+        padding: 1rem;
+    }
+    .footerContent p{
+        text-align: center;
+    }
 }

@@ -77,3 +77,27 @@
     letter-spacing: 1.5px;
     margin-top: 1rem;
 }
+
+@media (max-width: 900px) {
+    #content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 85%;
+        margin: 0 auto;
+
+    }
+    .authContainer{
+        width: 100%;
+    }
+    .authForm
+    {
+        width: 100%;
+    }
+    .authForm form{
+        width: 100%;
+    }
+    .authForm form input{
+        width: 75%;
+    }
+}

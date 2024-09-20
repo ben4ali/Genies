@@ -382,6 +382,7 @@ dialog[open]{
     border: none;
     outline: none;
     backdrop-filter: blur(36px);
+    -webkit-backdrop-filter: blur(36px);
     border-radius: 7px;
     padding: 1rem;
     color: white;
@@ -488,4 +489,53 @@ dialog img:nth-child(2){
 }
 .custum-file-upload input {
     display: none;
+}
+
+@media (max-width: 900px) {
+    #content{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        margin: 0 auto;
+    }
+    .userSection{
+        width: 100%;
+        height: fit-content;
+    }
+    .toolSection{
+        width: 100%;
+        min-height: 15rem;
+        padding: initial;
+        padding-bottom: 2rem;
+    }
+    .toolSection h3{
+        margin-left: 3rem;
+        margin-top: 2rem;
+    }
+    .toolHolder{
+        width: 100%;
+    }
+    .toolSection a{
+        height: 8rem;
+        width: 8rem;
+    }
+    .toolSection a img{
+        width: 4rem;
+        height: 4rem;
+    }
+    .activitySection{
+        flex-direction: column;
+        width: 100%;
+        height: fit-content;
+        align-items: center;
+    }
+    .saveContainer, .activityContainer{
+        width: 90%;
+        margin-left: 0;
+    }
+    .activityContainer{
+        border-top: 1px solid rgb(255,255,255,0.3);
+        padding-top: 2rem;
+        padding-bottom: 5rem;
+    }
 }

@@ -27,6 +27,7 @@
     background-color: rgb(0,0,0,0.3);
     overflow-y: scroll;
     overflow-x: hidden;
+    z-index: 1;
 }
 .verticalBar i{
     color: rgb(255,255,255,0.5);
@@ -244,6 +245,7 @@
     z-index: 3;
     left: 15%;
     filter: blur(1px);
+    -webkit-filter: blur(1px);
     animation: typing-shadow046 0.5s alternate infinite ease;
 }
 @keyframes typing-shadow046 {
@@ -269,4 +271,30 @@
     left: auto;
     right: 15%;
     animation-delay: 0.3s;
+}
+
+@media (max-width: 900px) {
+    .verticalBar{
+        background-color: rgb(0,0,0,0.9);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+
+    }
+    .chatContainer, .inputHolder{
+        width: 70%;
+        margin-left: 20%;
+    }
+    .welcomeHolder h2{
+        font-size: 20px;
+    }
+    .suggestionHolder{
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .suggestion{
+        width: 8rem;
+        height: 8rem;
+        margin: 0;
+        font-size: 10px;
+    }
 }
