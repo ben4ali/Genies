@@ -493,12 +493,16 @@ function sendChat(message){
             const botChat = document.createElement('div');
             botChat.classList.add('chat');
             botChat.classList.add('left');
+            
+            //correction
             const botChatText = document.createElement('p');
+            botChatText.textContent = responseText;
+            botChat.appendChild(botChatText);
+            
             const botImg = document.createElement('img');
             botImg.src = '../media/icons/genies.png';
             botImg.alt = 'bot';
             botImg.classList.add('bot');
-            botChat.appendChild(botChatText);
             botChat.appendChild(botImg);
             chatContainer.appendChild(botChat);
             
