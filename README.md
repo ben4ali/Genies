@@ -7,11 +7,21 @@
 - **Image Generation** using Stability AI API
 - **Translation** using DeepL API
 
+
 ## Features
 
 - **User Authentication**: Create an account, log in, and securely manage your AI tool preferences.
 - **AI Tools**: Easily access a variety of AI-powered functionalities.
 - **User Friendly interface**: Client-side interactions are enhanced with GSAP (GreenSock Animation Platform).
+
+## Preview
+
+![Home Page Preview](previews/preview1.gif)
+![Authentification Preview](previews/preview2.gif)
+![Dashboard Preview](previews/preview3.png)
+![Assistant Preview](previews/preview4.png)
+![Image generation Preview](previews/preview5.png)
+![Translation Preview](previews/preview6.png)
 
 ## Installation & Setup
 
